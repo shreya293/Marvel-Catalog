@@ -1,0 +1,262 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #121212;
+  color: #ddd;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  background-color: #b71c1c;
+  padding: 1rem 0;
+  text-align: center;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* MAIN AREA */
+main {
+  background-color: #121212;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* MOVIE GRID LIST PAGE - FLEX WRAP, CENTERED */
+
+/* MOVIE GRID LIST PAGE */
+#movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* MOVIE CARDS (HOME) */
+.movie-card {
+  background-color: #1e1e1e;
+  color: #ddd;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 220px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #c62828;
+}
+.movie-card h5 {
+  color: #c62828;
+  text-align: center;
+  margin: 0.5rem;
+}
+.movie-card p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+.movie-card a.btn {
+  display: inline-block;
+  margin: 0.5rem auto 1rem;
+  padding: 0.4rem 1rem;
+  background-color: #c62828;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* MOVIE DETAILS PAGE CONTAINER */
+#movie-details {
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+}
+
+/* HEADINGS */
+#movie-details h2,
+#movie-details h3,
+#movie-details h4 {
+  color: #c62828;
+  text-align: center;
+  margin: 1rem 0;
+  border-bottom: 2px solid #c62828;
+  padding-bottom: 0.3rem;
+}
+
+/* POSTER IMAGE */
+#movie-details img.movie-poster {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1rem 0;
+  border: 2px solid #c62828;
+}
+
+/* TEXT & LISTS */
+#movie-details p,
+#movie-details li {
+  color: #ccc;
+  line-height: 1.5;
+}
+#movie-details ul {
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+/* CHARACTER & CREW SECTIONS - SAME GRID */
+.character-list,
+.crew-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.character-card,
+.crew-card {
+  background-color: #1e1e1e;
+  color: #ddd;
+  border-radius: 12px;
+  width: 220px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 0 1 220px;
+}
+.character-card:hover,
+.crew-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.7);
+}
+.character-card img,
+.crew-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #c62828;
+}
+.character-card h4,
+.crew-card h4 {
+  color: #c62828;
+  text-align: center;
+  margin: 0.5rem;
+}
+.character-card p,
+.crew-card p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 0.2rem 0.5rem;
+}
+
+/* REVIEWS */
+#reviews p {
+  background-color: #222;
+  border-left: 4px solid #c62828;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  color: #ddd;
+}
+#reviews p strong {
+  color: #fff;
+}
+
+/* REVIEW FORM */
+#movie-details input, 
+#movie-details textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #222;
+  color: #eee;
+}
+#movie-details button {
+  background-color: #c62828;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#movie-details button:hover {
+  background-color: #b71c1c;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .movie-card,
+  .character-card,
+  .crew-card {
+    width: 200px;
+    flex: 0 1 200px;
+  }
+}
+@media (max-width: 768px) {
+  .movie-card,
+  .character-card,
+  .crew-card {
+    max-width: 100%;
+  }
+  #movies-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card,
+  .character-card,
+  .crew-card {
+    width: 90%;
+    flex: 0 1 90%;
+  }
+  #movie-details img.movie-poster {
+    max-height: 300px;
+  }
+}
+
+footer {
+  background-color: #1e1e1e;
+  color: #aaa;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  border-top: 2px solid #c62828;
+}
